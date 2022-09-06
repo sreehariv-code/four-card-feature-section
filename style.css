@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
 :root {
   --red: hsl(0, 78%, 62%);
   --cyan: hsl(180, 62%, 55%);
@@ -27,6 +28,7 @@
 main {
   min-height: 100vh;
 }
+
 main .header {
   display: flex;
   flex-direction: column;
@@ -35,26 +37,31 @@ main .header {
   text-align: center;
   align-items: center;
 }
+
 main .header .head {
   color: var(--bold);
   font-size: 1.7rem;
   font-weight: 200;
 }
+
 main .header .main-head {
   font-size: 1.7rem;
 }
+
 main .header .para {
   text-align: center;
   color: var(--head);
   width: 34ch;
   margin-top: 1.5rem;
 }
+
 main .body {
   width: 100%;
   display: grid;
   gap: 20px;
   margin: 5rem auto 4rem;
 }
+
 main .body .box {
   width: clamp(345px, 60%, 500px);
   justify-self: center;
@@ -67,21 +74,27 @@ main .body .box {
   border-radius: 6px;
   grid-template-rows: 0.25fr 0.5fr 2fr;
 }
+
 main .body .box:nth-child(1) {
   border-top: 7px solid var(--cyan);
 }
+
 main .body .box:nth-child(2) {
   border-top: 7px solid var(--red);
 }
+
 main .body .box:nth-child(3) {
   border-top: 7px solid var(--orange);
 }
+
 main .body .box:nth-child(4) {
   border-top: 7px solid var(--blue);
 }
+
 main .body .box .heading {
   font-size: 1.5rem;
 }
+
 main .body .box img {
   width: 50px;
   align-self: flex-end;
@@ -92,44 +105,64 @@ main .body .box img {
   main .body {
     grid-template-columns: repeat(2, 352px);
     -moz-column-gap: 25px;
-         column-gap: 25px;
+    column-gap: 25px;
     justify-content: center;
   }
 }
-@media screen and (min-width: 1030px) {
+
+@media screen and (min-width: 1450px) {
   main .header .head,
-main .header .main-head {
+  main .header .main-head {
     font-size: 3rem;
   }
+
   main .header .para {
     font-size: 1.4rem;
     width: 57ch;
   }
-  main .body {
+
+  main .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main .container .body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     max-width: 80%;
     padding: 0 2rem;
     grid-template-areas: "start mid1 end" "start mid2 end";
   }
-  main .body .box {
-    width: clamp(325px, 25%, 355px);
+
+  main .container .body .box {
+    width: clamp(358px, 60%, 405px);
     min-height: 280px;
     gap: 0;
   }
-  main .body .box:nth-child(1), main .body .box:nth-child(4) {
+
+  main .container .body .box:nth-child(1),
+  main .container .body .box:nth-child(4) {
     align-self: center;
   }
-  main .body .box:nth-child(1) {
+
+  main .container .body .box:nth-child(1) {
     grid-area: start;
   }
-  main .body .box:nth-child(2) {
+
+  main .container .body .box:nth-child(2) {
     grid-area: mid1;
   }
-  main .body .box:nth-child(3) {
+
+  main .container .body .box:nth-child(3) {
     grid-area: mid2;
   }
-  main .body .box:nth-child(4) {
+
+  main .container .body .box:nth-child(4) {
     grid-area: end;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

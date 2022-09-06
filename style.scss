@@ -108,7 +108,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1030px) {
+@media screen and (min-width: 1450px) {
   main {
     .header {
       .head,
@@ -120,39 +120,48 @@ main {
         width: 57ch;
       }
     }
-    .body {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      max-width: 80%;
-      // max-width: 700px;
-      padding: 0 2rem;
 
-      grid-template-areas:
-        "start mid1 end"
-        "start mid2 end";
-      .box {
-        width: clamp(325px, 25%, 355px);
-        min-height: 280px;
-        gap: 0;
-        &:nth-child(1),
-        &:nth-child(4) {
-          align-self: center;
-        }
-        &:nth-child(1) {
-          // border-top: 7px solid var(--cyan);
-          grid-area: start;
-        }
-        &:nth-child(2) {
-          // border-top: 7px solid var(--red);
-          grid-area: mid1;
-        }
-        &:nth-child(3) {
-          // border-top: 7px solid var(--orange);
-          grid-area: mid2;
-        }
-        &:nth-child(4) {
-          // border-top: 7px solid var(--blue);
-          grid-area: end;
+    .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .body {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        max-width: 80%;
+        // max-width: 80%;
+        // max-width: 700px;
+        padding: 0 2rem;
+
+        grid-template-areas:
+          "start mid1 end"
+          "start mid2 end";
+        .box {
+          width: clamp(358px, 60%, 405px);
+          min-height: 280px;
+          gap: 0;
+          &:nth-child(1),
+          &:nth-child(4) {
+            align-self: center;
+          }
+          &:nth-child(1) {
+            // border-top: 7px solid var(--cyan);
+            grid-area: start;
+          }
+          &:nth-child(2) {
+            // border-top: 7px solid var(--red);
+            grid-area: mid1;
+          }
+          &:nth-child(3) {
+            // border-top: 7px solid var(--orange);
+            grid-area: mid2;
+          }
+          &:nth-child(4) {
+            // border-top: 7px solid var(--blue);
+            grid-area: end;
+          }
         }
       }
     }
