@@ -52,17 +52,17 @@ main {
   .body {
     width: 100%;
     // background: yellow;
-    margin-top: 5rem;
+    // margin-top: 5rem;
     display: grid;
     gap: 20px;
-    margin-bottom: 4rem;
+    // margin-bottom: 4rem;
+    margin: 5rem auto 4rem;
     .box {
       //   border: 2px solid black;
-
-      width: clamp(365px, 60%, 500px);
+      width: clamp(345px, 60%, 500px);
       justify-self: center;
       display: grid;
-      min-height: 200px;
+      height: clamp(200px, 5rem, 500px);
       flex-direction: column;
       //   border-top: 1px solid black;
       box-shadow: var(--box-shadow) 0px 5px 15px;
@@ -72,15 +72,19 @@ main {
       grid-template-rows: 0.25fr 0.5fr 2fr;
       &:nth-child(1) {
         border-top: 7px solid var(--cyan);
+        // grid-area: start;
       }
       &:nth-child(2) {
         border-top: 7px solid var(--red);
+        // grid-area: mid1;
       }
       &:nth-child(3) {
         border-top: 7px solid var(--orange);
+        // grid-area: mid2;
       }
       &:nth-child(4) {
         border-top: 7px solid var(--blue);
+        // grid-area: end;
       }
       .heading {
         font-size: 1.5rem;
@@ -89,6 +93,67 @@ main {
         width: 50px;
         align-self: flex-end;
         justify-self: flex-end;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    .body {
+      grid-template-columns: repeat(2, 352px);
+      column-gap: 25px;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (min-width: 1030px) {
+  main {
+    .header {
+      .head,
+      .main-head {
+        font-size: 3rem;
+      }
+      .para {
+        font-size: 1.4rem;
+        width: 57ch;
+      }
+    }
+    .body {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      max-width: 80%;
+      // max-width: 700px;
+      padding: 0 2rem;
+
+      grid-template-areas:
+        "start mid1 end"
+        "start mid2 end";
+      .box {
+        width: clamp(325px, 25%, 355px);
+        min-height: 280px;
+        gap: 0;
+        &:nth-child(1),
+        &:nth-child(4) {
+          align-self: center;
+        }
+        &:nth-child(1) {
+          // border-top: 7px solid var(--cyan);
+          grid-area: start;
+        }
+        &:nth-child(2) {
+          // border-top: 7px solid var(--red);
+          grid-area: mid1;
+        }
+        &:nth-child(3) {
+          // border-top: 7px solid var(--orange);
+          grid-area: mid2;
+        }
+        &:nth-child(4) {
+          // border-top: 7px solid var(--blue);
+          grid-area: end;
+        }
       }
     }
   }
